@@ -15,7 +15,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         <Header />
-        {children}
+
+        <main className="pl-C/165">
+          {children}
+        </main>
       </body>
     </html>
   )

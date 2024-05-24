@@ -7,20 +7,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      padding: {
-        'C/165': '165px',
-      },
-      width: {
-        'C/150': '150px',
-      },
-      height: {
-        'C/1.5': '1.5px',
-      },
-      margin: {
-        'C/-1': '10px'
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }

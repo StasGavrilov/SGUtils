@@ -16,7 +16,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <Header />
 
-        <main className="pl-C/165">
+        <main className="pl-[165px]">
           {children}
         </main>
       </body>

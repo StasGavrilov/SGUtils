@@ -10,13 +10,14 @@ import Result from "./Result"
 export default function Converter() {
   const [value, setValue] = useState<number | ''>('')
   const [selectedUnit, setSelectedUnit] = useState<string>('Years')
+  const [status, setStatus] = useState<string>('-')
 
   const headers = ['Input', 'Unit', 'Status', 'Result']
   const data = [
     [
       <NumberInput value={value} onValueChange={setValue} />,
       <UnitSelection selectedUnit={selectedUnit} onUnitChange={setSelectedUnit} />,
-      <span>status</span>,
+      <span>{value ? 'Counting..' : 'Waiting'}</span>,
       <Result value={value} unit={selectedUnit} />,
     ],
   ]

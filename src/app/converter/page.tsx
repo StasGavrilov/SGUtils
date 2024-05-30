@@ -23,7 +23,7 @@ export default function Converter() {
   ]
 
   return (
-    <Box title="Converter">
+    <Box title="Converter" className='text-2xl'>
       <Table headers={headers} data={data} />
     </Box>
   )

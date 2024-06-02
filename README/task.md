@@ -6,4 +6,5 @@ Tasks follow-up
 | Done       | Task-03  |                         | sb/navigation-bar                          |                                 |                         |
 | Done       | Task-04  |                         | sb/conveter                                |                                 |                         |
 | Done       | Task-05  | Hover in navbar         | sb/bug_fixing                               |                                 |                         |
-|            | Task-05  | Change colors           | sb/colors.                                 |                                 |                         |
+| Done       | Task-05  | Change colors           | sb/colors                                  |                                 |                         |
+|            | Task-06  | Add tests.              | sb/tests                                   |                                 |                         |

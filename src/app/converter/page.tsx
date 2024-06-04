@@ -10,7 +10,6 @@ import Result from "./Result"
 export default function Converter() {
   const [value, setValue] = useState<number | ''>('')
   const [selectedUnit, setSelectedUnit] = useState<string>('Years')
-  const [status, setStatus] = useState<string>('-')
 
   const headers = ['Input', 'Unit', 'Status', 'Result']
   const data = [
@@ -23,7 +22,7 @@ export default function Converter() {
   ]
 
   return (
-    <Box title="Converter" className='text-2xl'>
+    <Box title="Converter">
       <Table headers={headers} data={data} />
     </Box>
   )

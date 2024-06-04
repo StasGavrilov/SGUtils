@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { Montserrat } from 'next/font/google'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import Header from "@/components/Head/Header"
 
@@ -16,6 +18,8 @@ const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
 })
+
+config.autoAddCss = false
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

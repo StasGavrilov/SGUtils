@@ -9,6 +9,7 @@ export default function Logo() {
         alt={'emblem'}
         width={25}
         height={25}
+        className='rounded'
       />
       <span className='ml-2'>StasBot.</span>
     </Link>

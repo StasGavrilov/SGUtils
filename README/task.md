@@ -10,4 +10,5 @@ Tasks follow-up
 | Done       | Task-06  | Add tests               | sb/tests                                   | Not added any tests yet, only env |                         |
 | Failed     | Task-07  | Responsive              | sb/task-07_responsive_and_icons            |                                   | Could not make it work  |
 | Done       | Task-08  | Improvements            | sb/task-08_improvements                    |                                   |                         |
-|            | Task-09  | Improvements 2          | sb/task-08_improvements2                   |                                   |                         |
+| Done       | Task-09  | Improvements 2          | sb/task-09_improvements2                   |                                   |                         |
+|            | Task-10  | Progress page           | sb/task-10_progress_page                   |                                   |                         |

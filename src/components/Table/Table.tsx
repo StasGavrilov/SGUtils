@@ -1,11 +1,9 @@
 interface ITable {
   headers: string[]
-  data: JSX.Element[] | number[]
+  data: (JSX.Element | number)[][]
 }
 
 export default function Table({ headers, data }: ITable) {
-  const dataArray = Array.isArray(data) ? data : [data]
-
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-300 table-fixed">
@@ -14,7 +12,7 @@ export default function Table({ headers, data }: ITable) {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className="py-2 px-4 border-b border-r text-center w-1/5"
+                className="py-2 px-4 border-b border-r text-center w-auto"
               >
                 {header}
               </th>
@@ -23,16 +21,18 @@ export default function Table({ headers, data }: ITable) {
         </thead>
 
         <tbody>
-          <tr>
-            {dataArray.map((cell, cellIndex) => (
-              <td
-                key={cellIndex}
-                className="py-2 px-4 border-b border-r text-center w-1/5"
-              >
-                {cell}
-              </td>
-            ))}
-          </tr>
+          {data.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <td
+                  key={cellIndex}
+                  className="py-2 px-4 border-b border-r text-center w-auto"
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

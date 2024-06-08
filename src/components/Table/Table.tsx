@@ -14,7 +14,7 @@ export default function Table({ headers, data }: ITable) {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className="py-2 px-4 border-b border-r text-center w-1/5"
+                className="py-2 px-4 border-b border-r text-center w-auto"
               >
                 {header}
               </th>
@@ -27,7 +27,7 @@ export default function Table({ headers, data }: ITable) {
             {dataArray.map((cell, cellIndex) => (
               <td
                 key={cellIndex}
-                className="py-2 px-4 border-b border-r text-center w-1/5"
+                className="py-2 px-4 border-b border-r text-center w-auto"
               >
                 {cell}
               </td>

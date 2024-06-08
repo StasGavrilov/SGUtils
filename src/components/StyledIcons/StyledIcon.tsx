@@ -6,7 +6,7 @@ interface IStyledIcons {
   className: string
 }
 
-export default function StyledIcons({ icon, className}: IStyledIcons) {
+export default function StyledIcons({ icon, className }: IStyledIcons) {
   return (
     <div>
       <FontAwesomeIcon icon={icon} className={className} />

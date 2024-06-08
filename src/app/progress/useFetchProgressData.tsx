@@ -1,12 +1,11 @@
 'use client'
-
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { supabase } from '@/../supabaseClient'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFile } from '@fortawesome/free-solid-svg-icons'
 
 export function useFetchProgressData() {
-    const [progress, setProgress] = useState<(JSX.Element | number)[][]>([])
+    const [progress, setProgress] = useState<(number | JSX.Element)[][]>([])
     const [fetchError, setFetchError] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
@@ -22,7 +21,7 @@ export function useFetchProgressData() {
                 setProgress([])
                 console.log(error)
             } else {
-                const formattedData = data.map((item: any) => [
+                const formattedData = (data || []).map((item: any) => [
                     item['מסה/חיטוב'] || '',
                     item['תאריך'] || '',
                     item['משקל'] || '',
@@ -36,10 +35,10 @@ export function useFetchProgressData() {
                     item['אחוז שומן נוסחת היקפים'] || '',
                     item['אחוז שומן מכשיר מדידה'] || '',
                     item['אחוז שומן ממוצע בדיקות'] || '',
-                    <FontAwesomeIcon icon={faFile} />
+                    item['קובץ'] || <FontAwesomeIcon icon={faFile} />,
                 ])
 
-                setProgress(formattedData || [])
+                setProgress(formattedData)
                 setFetchError(null)
             }
 

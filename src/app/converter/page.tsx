@@ -15,10 +15,12 @@ export default function Converter() {
 
   const headers = ['Input', 'Unit', 'Status', 'Result']
   const data = [
-    <NumberInput value={value} onValueChange={setValue} />,
-    <UnitSelection selectedUnit={selectedUnit} onUnitChange={setSelectedUnit} />,
-    <Counting value={value} />,
-    <Result value={value} unit={selectedUnit} />,
+    [
+      <NumberInput value={value} onValueChange={setValue} />,
+      <UnitSelection selectedUnit={selectedUnit} onUnitChange={setSelectedUnit} />,
+      <Counting value={value} />,
+      <Result value={value} unit={selectedUnit} />,
+    ]
   ]
 
   return (

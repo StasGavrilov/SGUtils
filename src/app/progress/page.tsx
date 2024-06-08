@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react'
 import { supabase } from '@/../supabaseClient'
-import { faFile } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFile } from '@fortawesome/free-solid-svg-icons'
 
 import Box from '@/components/Box/Box'
 import Loading from '@/components/Loading/Loading'
@@ -16,7 +16,7 @@ const PLACEHOLDERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, <FontAwesomeIco
 
 export default function Progress() {
   const { progress, fetchError, isLoading } = useFetchProgressData()
-  const [data, setData] = useState<(JSX.Element | number)[][]>(progress)
+  const [data, setData] = useState<(number | JSX.Element)[][]>([PLACEHOLDERS])
 
   async function handleSubmit() {
     const newRow = [...PLACEHOLDERS]

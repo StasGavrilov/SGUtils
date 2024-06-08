@@ -34,7 +34,7 @@ export default function NavBar() {
               onClick={() => setActiveTab(nav.label)}
               className="flex items-center"
             >
-              <FontAwesomeIcon icon={nav.icon} className="mr-2" />
+              <FontAwesomeIcon icon={nav.icon} className="mr-2 w-5 h-5" />
               {nav.label}
             </Link>
           </li>

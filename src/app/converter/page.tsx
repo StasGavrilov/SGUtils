@@ -20,7 +20,7 @@ export default function Converter() {
     <Counting value={value} />,
     <Result value={value} unit={selectedUnit} />,
   ]
-  
+
   return (
     <Box title="Converter">
       <Table headers={headers} data={data} />

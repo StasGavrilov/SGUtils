@@ -6,7 +6,8 @@ import { supabase } from '@/../supabaseClient'
 import Box from '@/components/Box/Box'
 import Loading from '@/components/Loading/Loading'
 import Table from '@/components/Table/Table'
-import {headers} from './headers'
+import { headers } from './headers'
+import AddMonth from './AddMonth'
 interface ProgressData {
   id: number
   title: string
@@ -39,12 +40,21 @@ export default function Progress() {
     fetchData()
   }, [])
 
-  const data = [1,2,3,4] //PLACEHOLDERS
+  const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] //PLACEHOLDERS
+
+  function handleSubmit() {
+    console.log('Clicked...')
+  }
 
   return (
     <Box title='Progress'>
-      <button>Add</button>
-      {isLoading ? <Loading /> : <Table headers={headers} data={data} />}
+      <div className='flex justify-end items-center'>
+        <AddMonth handleSubmit={handleSubmit} />
+      </div>
+
+      <div>
+        {isLoading ? <Loading /> : <Table headers={headers} data={data} />}
+      </div>
     </Box>
   )
 }

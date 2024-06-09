@@ -1,9 +1,10 @@
 'use client'
+
 import { useState, useEffect } from 'react'
 import { supabase } from '@/../supabaseClient'
 
 export function getData() {
-    const [progress, setProgress] = useState<(number | JSX.Element)[][]>([])
+    const [progress, setProgress] = useState<any>([])
     const [fetchError, setFetchError] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
@@ -11,8 +12,8 @@ export function getData() {
         const fetchData = async () => {
             setIsLoading(true)
             const { data, error } = await supabase
-                .from('Progress')
-                .select()
+                .from('progress')
+                .select('*')
 
             if (error) {
                 setFetchError('Could not fetch data')

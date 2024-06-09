@@ -19,8 +19,8 @@ export default function Progress() {
   async function handleSubmit() {
     const newRow = [...PLACEHOLDERS]
 
-    const { data: insertedData, error } = await supabase
-      .from('Progress')
+    const { data, error } = await supabase
+      .from('progress')
       .insert([])
       .select()
 
@@ -28,7 +28,6 @@ export default function Progress() {
       console.log('Error inserting data:', error)
     } else {
       setData(prevData => [...prevData, newRow])
-      console.log('Inserted data:', insertedData)
     }
   }
 
@@ -43,7 +42,11 @@ export default function Progress() {
         {fetchError && <div>{fetchError}</div>}
       </div>
 
-      {progress}
+      {progress.map((prog: any) => (
+        <div key={prog.id}>
+          {prog.bulk_cut}
+        </div>
+      ))}
     </Box>
   )
 }

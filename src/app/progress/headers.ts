@@ -1,24 +1,5 @@
-export const headers = [
-    'מסה/חיטוב',
-    'תאריך',
-    'משקל',
-    'היקף חזה',
-    'היקף מותניים (טבור)',
-    'היקף ירך עליון בכיווץ',
-    'היקף ירך תחתון בכיווץ',
-    'היקף יד קדמית בכיווץ',
-    'היקף יד אחורית בכיווץ',
-    'היקף תאומים בכיווץ',
-    'אחוז שומן נוסחת היקפים',
-    'אחוז שומן מכשיר מדידה',
-    'אחוז שומן ממוצע בדיקות',
-    'קובץ',
-]
-
-
-
-export function matchName(progress: Record<string, string | number>[]) {
-    return progress.map((prog) => ({
+export function mapProgressToTableData(progress: Record<string, string | number>[]) {
+    const mappedData = progress.map((prog) => ({
         'מסה/חיטוב': prog.bulk_cut,
         'תאריך': prog.created_at,
         'משקל': 89.3,
@@ -35,4 +16,8 @@ export function matchName(progress: Record<string, string | number>[]) {
         'אחוז שומן ממוצע בדיקות': prog.average_fat_percentage_percentage,
         'קובץ': prog.file,
     }))
+
+    const headers = mappedData.length > 0 ? Object.keys(mappedData[0]) : []
+
+    return { headers, data: mappedData }
 }

@@ -4,16 +4,19 @@ import React, { useState, useEffect } from 'react'
 import Box from '@/components/Box/Box'
 import Loading from '@/components/Loading/Loading'
 import Table from '@/components/Table/Table'
-import { headers, matchName } from './headers'
 import AddMonth from './AddMonth'
 import { getData } from './getData'
+import { mapProgressToTableData } from './headers'
 
 export default function Progress() {
   const { progress, fetchError, isLoading, handleSubmit } = getData()
   const [data, setData] = useState<Record<string, string | number>[]>([])
+  const [headers, setHeaders] = useState<string[]>([])
 
   useEffect(() => {
-    setData(matchName(progress))
+    const { headers, data } = mapProgressToTableData(progress)
+    setData(data)
+    setHeaders(headers)
   }, [progress])
 
   return (

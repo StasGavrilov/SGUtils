@@ -9,8 +9,8 @@ export default function Home() {
         <Image
           src={'/pictures/pro.jpg'}
           alt={'emblem'}
-          width={250}
-          height={250}
+          width={350}
+          height={600}
           className='rounded'
         />
 

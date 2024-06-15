@@ -27,7 +27,7 @@ export default function NavBar() {
         return (
           <li
             key={nav.label}
-            className={`h-10 text-xl flex items-center w-full pl-2 hover:bg-[#18bc9c] text-white hover:font-[500] ${isActive ? 'bg-[#18bc9c] font-[500]' : ''}`}
+            className={`h-10 text-xl flex items-center w-full pl-2 hover:bg-secondary text-white hover:font-[500] ${isActive ? 'bg-secondary font-[500]' : ''}`}
           >
             <Link
               href={nav.target}

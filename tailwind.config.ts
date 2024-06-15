@@ -8,8 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      screens: {
-        'xs': '480px',
+      backgroundColor: {
+        'main': '#2c3e50',
+        'secondary': '#18bc9c',
+        'input': '#DEDFE4',
+      },
+      borderColor: {
+        'main': '#2c3e50',
+        'secondary': '#18bc9c',
+      },
+      textColor: {
+        'main': '#2c3e50',
+        'secondary': '#18bc9c',
       },
     },
   },

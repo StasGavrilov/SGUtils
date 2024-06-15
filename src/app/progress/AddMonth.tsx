@@ -8,7 +8,7 @@ interface IAddMonth {
 export default function AddMonth({ handleSubmit }: IAddMonth) {
     return (
         <button
-            className='bg-[#2c3e50] p-1 m-1 w-40 h-9 flex justify-center items-center rounded hover:bg-[#18bc9c] text-white'
+            className='bg-main p-1 m-1 w-40 h-9 flex justify-center items-center rounded hover:bg-secondary text-white'
             onClick={handleSubmit}
         >
             <FontAwesomeIcon icon={faPlus} className="mr-1" />

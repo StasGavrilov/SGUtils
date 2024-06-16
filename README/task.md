@@ -13,4 +13,5 @@ Tasks follow-up
 | Done       | Task-09  | Improvements 2     | sb/task-09_improvements2        |                                   |                        |
 | Done       | Task-10  | Progress page      | sb/task-10_progress_page        | API call not implemented          |                        |
 | Done       | Task-11  | Progress page bugs | sb/task-11_progress_page_bugs   |                                   | addMonth not protected |
-|            | Task-12  | Improvements       | sb/task-12_improvements         | Admin button is placeholder       |                        |
+| Done       | Task-12  | Improvements       | sb/task-12_improvements         | Admin button is placeholder       |                        |
+| Done       | Task-13  | Login component    | sb/task-13_login_component      |                                   |                        |

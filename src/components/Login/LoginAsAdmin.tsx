@@ -24,7 +24,7 @@ export default function LoginAsAdmin() {
         <div className="flex justify-center items-center my-4 text-white">
             {!isAuthenticated ? (
                 <button
-                    className="w-32 h-8 bg-secondary border border-secondary rounded hover:bg-main"
+                    className="w-32 h-10 bg-secondary border border-secondary rounded hover:bg-main"
                     onClick={handleClick}
                 >
                     Admin only.
@@ -32,7 +32,7 @@ export default function LoginAsAdmin() {
             ) : (
                 isAuthenticated && (
                     <button
-                        className="w-32 h-8 bg-secondary border border-secondary rounded hover:bg-main flex justify-center items-center"
+                        className="w-32 h-10 bg-secondary border border-secondary rounded hover:bg-main flex justify-center items-center"
                         onClick={handleLogoff}
                     >
                         Hello, Stas!

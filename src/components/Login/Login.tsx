@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import UserHoverMessage from './UserHoverMessage'
+
 interface LoginProps {
     handleClose: () => void
     setIsAuthenticated: (isAuthenticated: boolean) => void
@@ -23,9 +25,9 @@ export default function Login({ handleClose, setIsAuthenticated }: LoginProps) {
     }
 
     return (
-        <div className="h-full flex flex-col justify-center items-center text-main">
-            <h1 className="absolute top-16 text-center text-2xl">Hello, Stas! :)</h1>
-            <div className="flex flex-col justify-center items-center w-full">
+        <div className="h-full flex flex-col justify-center items-center text-main relative">
+            <h1 className="absolute top-12 text-center text-2xl">Hello, Stas! :)</h1>
+            <div className="flex flex-col justify-center items-center w-full mt-6">
                 <div className="flex flex-col w-[275px] mb-4">
                     <span>User</span>
                     <input
@@ -44,6 +46,7 @@ export default function Login({ handleClose, setIsAuthenticated }: LoginProps) {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
+                <UserHoverMessage />
             </div>
             <div className="flex justify-center items-center">
                 <button

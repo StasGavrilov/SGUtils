@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '@/../supabaseClient'
 
 export function getData() {
-    const [progress, setProgress] = useState<any[]>([])
+    const [progress, setProgress] = useState<Record<string, string | number>[]>([])
     const [fetchError, setFetchError] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(true)
 

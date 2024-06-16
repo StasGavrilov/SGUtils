@@ -8,7 +8,7 @@ export function getData() {
     const [fetchError, setFetchError] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
-    async function fetchData() {
+    const fetchData = async () => {
         try {
             setIsLoading(true)
             const { data, error } = await supabase.from('progress').select()
@@ -27,7 +27,7 @@ export function getData() {
         fetchData()
     }, [])
 
-    async function handleSubmit() {
+    const handleSubmit = async () => {
         const newRow = {}
 
         const { data: insertedData, error } = await supabase

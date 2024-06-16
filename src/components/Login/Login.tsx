@@ -15,6 +15,7 @@ export default function Login({ handleClose, setIsAuthenticated }: LoginProps) {
 
         if (username === adminUser && password === adminPassword) {
             setIsAuthenticated(true)
+            localStorage.setItem('isAuthenticated', 'true')
             handleClose()
         } else {
             alert('Invalid credentials..')

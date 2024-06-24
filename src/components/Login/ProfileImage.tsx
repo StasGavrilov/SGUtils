@@ -13,8 +13,8 @@ export default function ProfileImage({ onClick, hoverText }: ProfileImageProps) 
                 <Image
                     src="/pictures/login-pic.jpg"
                     alt="emblem"
-                    width={80}
-                    height={80}
+                    width={50}
+                    height={50}
                     className="rounded-full"
                     onClick={onClick}
                 />

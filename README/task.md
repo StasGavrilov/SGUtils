@@ -15,4 +15,5 @@ Tasks follow-up
 | Done       | Task-11  | Progress page bugs | sb/task-11_progress_page_bugs   |                                   | addMonth not protected |
 | Done       | Task-12  | Improvements       | sb/task-12_improvements         | Admin button is placeholder       |                        |
 | Done       | Task-13  | Login component    | sb/task-13_login_component      |                                   |                        |
-|            | Task-14  | Improvements       | sb/task-14_improvements         |                                   |                        |
+| Done       | Task-14  | Improvements       | sb/task-14_improvements         |                                   |                        |
+|            | Task-15  | Improvements       | sb/task-15_responsive           |                                   |                        |

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Logo() {
   return (
-    <Link href='/' className='text-2xl flex items-center h-14 ml-3 text-[#f39c12]'>
+    <Link href='/' className='text-2xl flex items-center h-14 text-[#f39c12]'>
       <Image
         src={'/icons/sgb.jpg'}
         alt={'emblem'}
@@ -11,7 +11,7 @@ export default function Logo() {
         height={25}
         className='rounded'
       />
-      <span className='ml-2'>StasBot.</span>
+      <span className='ml-2 hidden lg:inline'>StasBot.</span>
     </Link>
   )
 }

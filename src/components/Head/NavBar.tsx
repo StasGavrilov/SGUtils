@@ -21,21 +21,21 @@ export default function NavBar() {
   }, [pathname])
 
   return (
-    <ul>
+    <ul className="flex flex-col w-full lg:items-start items-center">
       {navigation.map(nav => {
         const isActive = activeTab === nav.label
         return (
           <li
             key={nav.label}
-            className={`h-10 text-xl flex items-center w-full pl-2 hover:bg-secondary text-white hover:font-[500] ${isActive ? 'bg-secondary font-[500]' : ''}`}
+            className={`h-10 text-xl flex items-center w-full px-2 hover:bg-secondary text-white hover:font-[500] ${isActive ? 'bg-secondary font-[500]' : ''}`}
           >
             <Link
               href={nav.target}
               onClick={() => setActiveTab(nav.label)}
-              className="flex items-center"
+              className="flex items-center w-full justify-center lg:justify-start transition-all duration-500 ease-in-out"
             >
-              <FontAwesomeIcon icon={nav.icon} className="mr-2 w-5 h-5" />
-              {nav.label}
+              <FontAwesomeIcon icon={nav.icon} className="mr-2 w-6 h-6 lg:w-5 lg:h-5 transition-all duration-500 ease-in-out" />
+              <span className="hidden lg:inline">{nav.label}</span>
             </Link>
           </li>
         )

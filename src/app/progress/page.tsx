@@ -6,7 +6,7 @@ import Box from '@/components/Box/Box'
 import Loading from '@/components/Loading/Loading'
 import Table from '@/components/Table/Table'
 import AddMonth from './AddMonth'
-import { getData } from './getData'
+import { getData } from '../../api/getData'
 import { mapProgressToTableData } from './headers'
 import { useAuth } from '@/components/Login/AuthContext'
 

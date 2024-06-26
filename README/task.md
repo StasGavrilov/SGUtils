@@ -5,7 +5,7 @@ Tasks follow-up
 | Done       | Task-02  | Create a header    | sb/header                       |                                   |                        |
 | Done       | Task-03  |                    | sb/navigation-bar               |                                   |                        |
 | Done       | Task-04  |                    | sb/conveter                     |                                   |                        |
-| Done       | Task-05  | Hover in navbar    | sb/bug_fixing                    |                                   |                        |
+| Done       | Task-05  | Hover in navbar    | sb/bug_fixing                   |                                   |                        |
 | Done       | Task-05  | Change colors      | sb/colors                       |                                   |                        |
 | Done       | Task-06  | Add tests          | sb/tests                        | Not added any tests yet, only env |                        |
 | Failed     | Task-07  | Responsive         | sb/task-07_responsive_and_icons |                                   | Could not make it work |
@@ -16,4 +16,5 @@ Tasks follow-up
 | Done       | Task-12  | Improvements       | sb/task-12_improvements         | Admin button is placeholder       |                        |
 | Done       | Task-13  | Login component    | sb/task-13_login_component      |                                   |                        |
 | Done       | Task-14  | Improvements       | sb/task-14_improvements         |                                   |                        |
-|            | Task-15  | Improvements       | sb/task-15_responsive           |                                   |                        |
+| Done       | Task-15  | Responsive fix     | sb/task-15_responsive           |                                   | Have a bug             |
+|            | Task-16  | Right wing system  | sb/task-16_right_wing           | right wing, and improvements      |                        |

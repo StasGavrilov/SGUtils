@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import Login from './Login'
+import { useOutsideClick } from '../../helpers/useOutsideClick'
 
 interface LoginWindowProps {
     setIsOpen: (isOpen: boolean) => void
@@ -8,22 +9,6 @@ interface LoginWindowProps {
 
 export default function LoginWindow({ setIsOpen, setIsAuthenticated }: LoginWindowProps) {
     const [show, setShow] = useState(false)
-    const modalRef = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-        setShow(true)
-
-        const handleClickOutside = (event: MouseEvent) => {
-            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-                handleClose()
-            }
-        }
-
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
-        }
-    }, [])
 
     const handleClose = () => {
         setShow(false)
@@ -32,15 +17,17 @@ export default function LoginWindow({ setIsOpen, setIsAuthenticated }: LoginWind
         }, 300)
     }
 
+    const ref = useOutsideClick(handleClose)
+
+    useEffect(() => {
+        setShow(true)
+    }, [])
+
     return (
-        <div
-            className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'
-                }`}
-        >
+        <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'}`}>
             <div
-                ref={modalRef}
-                className={`bg-[#DEDFE4] p-6 rounded shadow-lg transform transition-transform duration-300 ${show ? 'scale-100' : 'scale-95'
-                    } w-[350px] h-[450px]`}
+                ref={ref}
+                className={`bg-[#DEDFE4] p-6 rounded shadow-lg transform transition-transform duration-300 ${show ? 'scale-100' : 'scale-95'} w-[350px] h-[450px]`}
             >
                 <Login handleClose={handleClose} setIsAuthenticated={setIsAuthenticated} />
             </div>

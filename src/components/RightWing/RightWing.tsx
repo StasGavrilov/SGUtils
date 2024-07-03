@@ -16,7 +16,7 @@ export default function RightWing({ title, isOpen, closeWing, handleSubmit }: IR
             <button onClick={closeWing} className="p-2 absolute right-3 top-3 rounded-full w-6 h-6 flex justify-center items-center">X</button>
 
             <Box title={title}>
-                <button onClick={handleSubmit} className="bg-main text-white p-2 absolute left-3 bottom-3 rounded hover:bg-secondary">Submit</button>
+                <button onClick={handleSubmit} className="bg-main text-white p-2 absolute right-3 bottom-3 rounded hover:bg-secondary">Submit</button>
             </Box>
         </div>
     )

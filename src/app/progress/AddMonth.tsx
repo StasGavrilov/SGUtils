@@ -3,11 +3,10 @@
 import React, { useState } from 'react'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import RightWing from '@/components/RightWing/RightWing'
 
 interface IAddMonth {
-    handleSubmit: () => void
+    handleSubmit: (formData: Record<string, any>) => void
 }
 
 export default function AddMonth({ handleSubmit }: IAddMonth) {

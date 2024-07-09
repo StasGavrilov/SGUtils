@@ -1,17 +1,16 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-
 import Box from '@/components/Box/Box'
 import Loading from '@/components/Loading/Loading'
 import Table from '@/components/Table/Table'
 import AddMonth from './AddMonth'
-import { getData } from '../../api/getData'
+import { useData, submitData } from '../../api/dataApi'
 import { mapProgressToTableData } from './headers'
 import { useAuth } from '@/components/Login/AuthContext'
 
 export default function Progress() {
-  const { progress, fetchError, isLoading, handleSubmit } = getData()
+  const { data: progress, fetchError, isLoading, setData: setProgress } = useData('progress')
   const [data, setData] = useState<Record<string, string | number>[]>([])
   const [headers, setHeaders] = useState<string[]>([])
   const { isAuthenticated } = useAuth()
@@ -21,6 +20,13 @@ export default function Progress() {
     setData(data)
     setHeaders(headers)
   }, [progress])
+
+  const handleSubmit = async (formData: Record<string, any>) => {
+    const insertedData = await submitData('progress', formData)
+    if (insertedData) {
+      setProgress(prevData => [...prevData, ...insertedData])
+    }
+  }
 
   return (
     <Box title='Progress'>

@@ -18,3 +18,4 @@ Tasks follow-up
 | Done       | Task-14  | Improvements       | sb/task-14_improvements         |                                   |                        |
 | Done       | Task-15  | Responsive fix     | sb/task-15_responsive           |                                   | Have a bug             |
 |            | Task-16  | Right wing system  | sb/task-16_right_wing           | right wing, and improvements      |                        |
+|            | Task-17  | hex                | sb/task-17_hex                  |                                   |                        |

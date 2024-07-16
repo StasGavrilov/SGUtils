@@ -8,29 +8,33 @@ export default function Hexadecimal() {
   const [decimalNumber, setDecimalNumber] = useState<number | null>(null)
   const [error, setError] = useState<string>('')
 
-  const hexToDecimal = (hexAddress: string) => {
+  const hexToDecimal = (hex: string) => {
     try {
-      const decimal = parseInt(hexAddress, 16)
+      const decimal = parseInt(hex, 16)
       if (isNaN(decimal)) {
         throw new Error("Invalid hexadecimal address")
       }
       setDecimalNumber(decimal)
       setError('')
-    } catch {
+    } catch (error) {
       setDecimalNumber(null)
       setError('Invalid hexadecimal address')
     }
   }
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => setHexAddress(event.target.value)
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setHexAddress(event.target.value)
+    setDecimalNumber(null)
+    setError('')
+  }
 
   const handleConversion = () => {
     hexToDecimal(hexAddress)
-    setHexAddress('')
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
+      event.preventDefault()
       handleConversion()
     }
   }
@@ -50,6 +54,7 @@ export default function Hexadecimal() {
           <button
             className='bg-main p-1 m-1 w-40 h-9 flex justify-center items-center rounded hover:bg-secondary text-white'
             onClick={handleConversion}
+            disabled={!hexAddress}
           >
             Convert
           </button>

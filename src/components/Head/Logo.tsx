@@ -11,7 +11,7 @@ export default function Logo() {
         height={25}
         className='rounded'
       />
-      <span className='ml-2 hidden lg:inline'>StasBot.</span>
+      <span className='ml-2 hidden lg:inline'>StasUtils.</span>
     </Link>
   )
 }

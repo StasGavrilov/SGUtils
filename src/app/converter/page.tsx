@@ -26,7 +26,7 @@ export default function Converter() {
   ]
 
   return (
-    <Box title="Converter">
+    <Box title="Time Converter">
       <Table headers={headers} data={data} />
 
       <div className='py-24'>

@@ -11,7 +11,7 @@ import "../styles/globals.css"
 export const metadata: Metadata = {
   title: "SGBot",
   description: "Stasg bot application",
-  icons: '/icons/sgb.jpg'
+  icons: '/icons/sgu.jpg'
 }
 
 const montserrat = Montserrat({

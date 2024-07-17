@@ -9,8 +9,8 @@ import { AuthProvider } from "@/components/Login/AuthContext"
 import "../styles/globals.css"
 
 export const metadata: Metadata = {
-  title: "SGBot",
-  description: "Stasg bot application",
+  title: "SGUtils",
+  description: "Stasg utils application",
   icons: '/icons/sgu.jpg'
 }
 

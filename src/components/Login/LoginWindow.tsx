@@ -24,7 +24,7 @@ export default function LoginWindow({ setIsOpen, setIsAuthenticated }: LoginWind
     }, [])
 
     return (
-        <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'}`}>
             <div
                 ref={ref}
                 className={`bg-[#DEDFE4] p-6 rounded shadow-lg transform transition-transform duration-300 ${show ? 'scale-100' : 'scale-95'} w-[350px] h-[450px]`}

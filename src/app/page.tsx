@@ -2,7 +2,7 @@ import Box from "@/components/Box/Box"
 
 export default function Home() {
   return (
-    <Box title="Welcome to Stasg-bot application.">
+    <Box title="Welcome to Stasg-Utils application.">
       <div className="flex flex-col lg:flex-row justify-center items-center min-h-screen p-2 lg:p-4">
         <video
           src="/videos/SG.MP4"

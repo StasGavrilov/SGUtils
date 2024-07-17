@@ -1,12 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Box from '@/components/Box/Box'
 
 export default function Hexadecimal() {
   const [hexAddress, setHexAddress] = useState<string>('')
   const [decimalNumber, setDecimalNumber] = useState<number | null>(null)
   const [error, setError] = useState<string>('')
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const hexToDecimal = (hex: string) => {
     try {
@@ -30,6 +31,7 @@ export default function Hexadecimal() {
 
   const handleConversion = () => {
     hexToDecimal(hexAddress)
+    setHexAddress('')
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -39,12 +41,19 @@ export default function Hexadecimal() {
     }
   }
 
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [])
+
   return (
     <Box title="Hexadecimal">
-      <div className='flex flex-col justify-center items-center h-screen'>
-        <div className='relative flex flex-col justify-center items-center w-80'>
-          <span className='p-4'>Enter Hexadecimal Address:</span>
+      <div className='flex flex-col justify-center items-center min-h-screen'>
+        <div className='flex flex-col justify-center items-center w-100 p-4'>
+          <span className='mb-2'>Enter Hexadecimal Address:</span>
           <input
+            ref={inputRef}
             className={`p-4 mb-4 rounded border-2 ${error ? 'border-red-500' : 'border-main'} focus:border-secondary hover:border-secondary`}
             type="text"
             value={hexAddress}
@@ -59,9 +68,9 @@ export default function Hexadecimal() {
             Convert
           </button>
 
-          <div className="absolute top-full left-0 mt-4 w-full text-center">
+          <div className="w-full text-center mt-4" style={{ minHeight: '4rem' }}>
             {decimalNumber !== null && (
-              <div className="text-green-700 px-4 py-2 mb-4">
+              <div className="text-green-700 px-4 py-2">
                 The decimal equivalent of {hexAddress} is {decimalNumber}
               </div>
             )}

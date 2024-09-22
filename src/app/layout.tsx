@@ -24,7 +24,7 @@ config.autoAddCss = false
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <AuthProvider>
+    // <AuthProvider>
       <html lang="en" className={montserrat.className}>
         <body>
           <Header />
@@ -34,6 +34,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </main>
         </body>
       </html>
-    </AuthProvider>
+    // </AuthProvider>
   )
 }

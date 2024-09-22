@@ -12,7 +12,7 @@ export default function Header() {
 
         <div className="flex-grow"></div>
 
-        <LoginAsAdmin />
+        {/* <LoginAsAdmin /> */}
       </aside>
     </div>
   )

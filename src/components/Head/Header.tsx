@@ -1,4 +1,3 @@
-import LoginAsAdmin from '../Login/LoginAsAdmin'
 import Logo from './Logo'
 import NavBar from './NavBar'
 
@@ -11,8 +10,6 @@ export default function Header() {
         <NavBar />
 
         <div className="flex-grow"></div>
-
-        {/* <LoginAsAdmin /> */}
       </aside>
     </div>
   )

@@ -4,7 +4,6 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import Header from "@/components/Head/Header"
-import { AuthProvider } from "@/components/Login/AuthContext"
 
 import "../styles/globals.css"
 
@@ -24,7 +23,6 @@ config.autoAddCss = false
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    // <AuthProvider>
       <html lang="en" className={montserrat.className}>
         <body>
           <Header />
@@ -34,6 +32,5 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </main>
         </body>
       </html>
-    // </AuthProvider>
   )
 }

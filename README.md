@@ -32,4 +32,4 @@
 - When responsive navbar text comes before the navbar fully open.
 
 # Open bugs:
-NO NEW BUGS
+- Absolute make the table move when open dropdown.

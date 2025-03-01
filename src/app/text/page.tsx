@@ -5,13 +5,14 @@ import { useState, useEffect, useRef } from 'react'
 import Box from '@/components/Box/Box'
 import ErrorMessage from '@/helpers/ErrorMessage'
 import SuccessMessage from '@/helpers/SuccessMessage'
+import Select from '@/components/Select/Select'
 import { strings } from './strings'
 
 export default function Strings() {
   const [inputText, setInputText] = useState<string>('')
   const [outputText, setOutputText] = useState<string | number>('')
   const [error, setError] = useState<string>('')
-  const [selectedOption, setSelectedOption] = useState<string>('toUpper')
+  const [selectedOption, setSelectedOption] = useState<string>('Uppercase')
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -27,15 +28,15 @@ export default function Strings() {
 
     try {
       const transformedText = strings(inputText, {
-        toUpper: selectedOption === 'toUpper',
-        toLower: selectedOption === 'toLower',
-        reverse: selectedOption === 'reverse',
-        gap: selectedOption === 'gap',
-        tag: selectedOption === 'tag',
-        commaToTag: selectedOption === 'commaToTag',
-        tagToComma: selectedOption === 'tagToComma',
-        joinWordsForTag: selectedOption === 'joinWordsForTag',
-        count: selectedOption === 'count',
+        toUpper: selectedOption === 'Uppercase',
+        toLower: selectedOption === 'Lowercase',
+        reverse: selectedOption === 'Reverse',
+        gap: selectedOption === 'Remove Spaces',
+        tag: selectedOption === 'Add Hashtag',
+        commaToTag: selectedOption === 'Convert Commas to Hashtags',
+        tagToComma: selectedOption === 'Convert Hashtags to Commas',
+        joinWordsForTag: selectedOption === 'Join Words into One Hashtag',
+        count: selectedOption === 'Count Characters',
       })
 
       setOutputText(transformedText)
@@ -64,22 +65,24 @@ export default function Strings() {
             placeholder='Add your text...'
           />
 
-          <select
-            className='mb-4 p-2 border-1 border-main rounded bg-white text-black text-center
-              appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary'
-            value={selectedOption}
-            onChange={(e) => setSelectedOption(e.target.value)}
-          >
-            <option value='toUpper'>Uppercase</option>
-            <option value='toLower'>Lowercase</option>
-            <option value='reverse'>Reverse</option>
-            <option value='gap'>Remove Spaces</option>
-            <option value='tag'>Add Hashtag</option>
-            <option value='commaToTag'>Convert Commas to Hashtags</option>
-            <option value='tagToComma'>Convert Hashtags to Commas</option>
-            <option value='joinWordsForTag'>Join Words into One Hashtag</option>
-            <option value='count'>Count Characters</option>
-          </select>
+          <div className="w-full flex justify-center items-center">
+            <Select
+              options={[
+                'Uppercase',
+                'Lowercase',
+                'Reverse',
+                'Remove Spaces',
+                'Add Hashtag',
+                'Convert Commas to Hashtags',
+                'Convert Hashtags to Commas',
+                'Join Words into One Hashtag',
+                'Count Characters'
+              ]}
+              value={selectedOption}
+              onChange={setSelectedOption}
+              placeholder="Select an option"
+            />
+          </div>
 
           <div className='w-full text-center mt-4' style={{ minHeight: '4rem' }}>
             <SuccessMessage message={outputText} />

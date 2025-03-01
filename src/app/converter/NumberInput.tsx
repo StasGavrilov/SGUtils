@@ -28,11 +28,14 @@ export default function NumberInput({ value, onValueChange }: NumberInputProps) 
   return (
     <input
       type='number'
-      className='w-full'
+      className='w-full outline-none border-none focus:ring-0 appearance-none
+        [&::-webkit-inner-spin-button]:appearance-none
+        [&::-webkit-outer-spin-button]:appearance-none'
       value={value}
       onChange={handleChange}
       placeholder='Enter numbers only'
       ref={inputRef}
     />
+
   )
 }

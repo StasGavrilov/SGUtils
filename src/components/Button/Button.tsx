@@ -10,8 +10,8 @@ interface ButtonProps {
 export default function Button({ label, onClick, disabled }: ButtonProps) {
     return (
         <button
-            className="bg-main p-1 m-1 w-40 h-9 flex justify-center items-center rounded text-white
-            hover:bg-white hover:text-secondary border hover:border-secondary hover:font-[600]"
+            className="bg-main p-1 m-1 w-40 h-9 flex justify-center items-center rounded text-white cursor-pointer
+            hover:bg-secondary hover:text-white hover:font-[600]"
             onClick={onClick}
             disabled={disabled}
         >

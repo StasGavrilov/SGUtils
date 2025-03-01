@@ -1,3 +1,5 @@
+import Select from "../../components/Select/Select"
+
 interface UnitSelectionProps {
   label: string
   selectedUnit: string
@@ -5,17 +7,16 @@ interface UnitSelectionProps {
 }
 
 export default function UnitSelection({ selectedUnit, onUnitChange }: UnitSelectionProps) {
-  const units = ['Hours', 'Days', 'Weeks', 'Months', 'Years']
-
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => onUnitChange(e.target.value)
+  const units = ["Hours", "Days", "Weeks", "Months", "Years"]
 
   return (
-    <select value={selectedUnit} onChange={handleChange}>
-      {units.map((unit, index) => (
-        <option key={index} value={unit}>
-          {unit}
-        </option>
-      ))}
-    </select>
+    <div className="w-full flex justify-center items-center ">
+      <Select
+        options={units}
+        value={selectedUnit}
+        onChange={onUnitChange}
+        placeholder="Choose a unit"
+      />
+    </div>
   )
 }

@@ -20,7 +20,7 @@ export default function Strings() {
 
   useEffect(() => {
     if (!inputText.trim()) {
-      setError('Please enter some text.')
+      setError('Please enter your text.')
       setOutputText('')
       return
     }
@@ -47,22 +47,26 @@ export default function Strings() {
   }, [inputText, selectedOption])
 
   return (
-    <Box title='String Manipulation'>
+    <Box title='Text Manipulation'>
       <div className='flex flex-col justify-center'>
         <div className='flex flex-col justify-center items-center w-full p-4'>
           <span className='mb-2 text-2xl'>Manipulate Your Text</span>
 
           <input
             ref={inputRef}
-            className={`w-[75%] p-4 mb-4 rounded border-1 ${error ? 'border-red-500' : 'border-main'
-              } focus:border-secondary hover:border-secondary`}
+            className={`w-[75%] p-4 mb-4 rounded border-1 outline-none border-none focus:ring-0
+              ${error ? 'border-red-500' : 'border-main'}
+               focus:border-secondary hover:border-secondary
+            `}
             type='text'
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
+            placeholder='Add your text...'
           />
 
           <select
-            className='mb-4 p-2 border-1 border-main rounded bg-white text-black text-center'
+            className='mb-4 p-2 border-1 border-main rounded bg-white text-black text-center
+              appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary'
             value={selectedOption}
             onChange={(e) => setSelectedOption(e.target.value)}
           >

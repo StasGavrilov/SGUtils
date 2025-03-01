@@ -59,11 +59,15 @@ export default function Hexadecimal() {
           <span className="mb-2 text-2xl">Enter Hexadecimal Address</span>
           <input
             ref={inputRef}
-            className={`p-4 mb-4 rounded border-1 ${error ? 'border-red-500' : 'border-main'} focus:border-secondary hover:border-secondary`}
+            className={`p-4 mb-4 rounded border-1 outline-none border-none focus:ring-0
+              ${error ? 'border-red-500' : 'border-main'}
+               focus:border-secondary hover:border-secondary
+            `}
             type="text"
             value={hexAddress}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
+            placeholder='Add hex address..'
           />
 
           <Button label="Convert" onClick={handleConversion} disabled={!hexAddress} />

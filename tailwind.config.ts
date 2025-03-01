@@ -1,11 +1,17 @@
-import type { Config } from "tailwindcss"
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'text-secondary',
+    'text-main',
+    'text-red',
+  ],
+
   theme: {
     extend: {
       backgroundColor: {
@@ -20,6 +26,7 @@ const config: Config = {
       textColor: {
         'main': '#2c3e50',
         'secondary': '#18bc9c',
+        'red': '#FF0000',
       },
     },
   },

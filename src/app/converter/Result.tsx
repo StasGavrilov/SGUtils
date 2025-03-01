@@ -42,14 +42,24 @@ export default function Result({ value, fromUnit, toUnit }: ResultProps) {
         const remainingDaysAfterYears = Math.floor((totalHours % (hoursInDay * daysInYear)) / hoursInDay)
         const monthsInYears = Math.floor(remainingDaysAfterYears / daysInMonth)
         const remainingDaysAfterMonthsInYears = remainingDaysAfterYears % daysInMonth
-        result = `${years} year${years !== 1 ? 's' : ''}, ${monthsInYears} month${monthsInYears !== 1 ? 's' : ''}, and ${remainingDaysAfterMonthsInYears} day${remainingDaysAfterMonthsInYears !== 1 ? 's' : ''}`
+        result = `
+        ${years} year${years !== 1 ? 's' : ''},
+        ${monthsInYears} month${monthsInYears !== 1 ? 's' : ''},
+        and ${remainingDaysAfterMonthsInYears}
+        day${remainingDaysAfterMonthsInYears !== 1 ? 's' : ''}
+        `
         break
       case 'Months':
         const months = Math.floor(totalHours / (hoursInDay * daysInMonth))
         const remainingDaysAfterMonths = Math.floor((totalHours % (hoursInDay * daysInMonth)) / hoursInDay)
         const weeksInMonths = Math.floor(remainingDaysAfterMonths / daysInWeek)
         const remainingDaysAfterWeeksInMonths = remainingDaysAfterMonths % daysInWeek
-        result = `${months} month${months !== 1 ? 's' : ''}, ${weeksInMonths} week${weeksInMonths !== 1 ? 's' : ''}, and ${remainingDaysAfterWeeksInMonths} day${remainingDaysAfterWeeksInMonths !== 1 ? 's' : ''}`
+        result = `
+        ${months} month${months !== 1 ? 's' : ''},
+        ${weeksInMonths} week${weeksInMonths !== 1 ? 's' : ''},
+        and ${remainingDaysAfterWeeksInMonths}
+        day${remainingDaysAfterWeeksInMonths !== 1 ? 's' : ''}
+        `
         break
       case 'Weeks':
         const weeks = Math.floor(totalHours / (hoursInDay * daysInWeek))

@@ -8,7 +8,6 @@ export default function Header() {
         <Logo />
         <div className='w-10 lg:w-[90%] h-[1.5px] bg-secondary my-2 mx-auto shadow-md rounded opacity-50 transition-all duration-700 ease-in-out' />
         <NavBar />
-        <div className='flex-grow'></div>
       </aside>
     </div>
   )

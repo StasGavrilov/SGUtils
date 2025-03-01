@@ -26,7 +26,6 @@ export default function Converter() {
   return (
     <Box title='Time Converter'>
       <div className='absolute w-full'>
-        <h1 className='text-xl underline underline-offset-2'>Description:</h1>
         <p className='text-sm sm:text-base md:text-lg lg:text-xl w-full max-w-[85%] break-words overflow-hidden flex flex-wrap min-w-0'>
           This application converts between various time units,
           assisting in determining the age of drives when analyzing faulty drives in field or lab systems.

@@ -13,7 +13,7 @@ export default function Hexadecimal() {
     try {
       const decimal = parseInt(hex, 16)
       if (isNaN(decimal)) {
-        throw new Error("Invalid hexadecimal address")
+        throw new Error('Invalid hexadecimal address')
       }
       setDecimalNumber(decimal)
       setError('')
@@ -48,14 +48,14 @@ export default function Hexadecimal() {
   }, [])
 
   return (
-    <Box title="Hexadecimal">
-      <div className='flex flex-col justify-center items-center min-h-screen'>
+    <Box title='Hexadecimal'>
+      <div className='flex flex-col justify-center'>
         <div className='flex flex-col justify-center items-center w-100 p-4'>
-          <span className='mb-2'>Enter Hexadecimal Address:</span>
+          <span className='mb-2 text-2xl'>Enter Hexadecimal Address</span>
           <input
             ref={inputRef}
             className={`p-4 mb-4 rounded border-2 ${error ? 'border-red-500' : 'border-main'} focus:border-secondary hover:border-secondary`}
-            type="text"
+            type='text'
             value={hexAddress}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
@@ -68,14 +68,14 @@ export default function Hexadecimal() {
             Convert
           </button>
 
-          <div className="w-full text-center mt-4" style={{ minHeight: '4rem' }}>
+          <div className='w-full text-center mt-4' style={{ minHeight: '4rem' }}>
             {decimalNumber !== null && (
-              <div className="text-green-700 px-4 py-2">
+              <div className='text-green-700 px-4 py-2'>
                 The decimal equivalent of {hexAddress} is {decimalNumber}
               </div>
             )}
             {error && (
-              <div className="text-red-700 px-4 py-2">
+              <div className='text-red-700 px-4 py-2'>
                 {error}
               </div>
             )}

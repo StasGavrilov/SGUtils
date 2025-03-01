@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react'
 
-import Box from "@/components/Box/Box"
-import Table from "@/components/Table/Table"
-import NumberInput from "./NumberInput"
-import UnitSelection from "./UnitSelection"
-import Result from "./Result"
+import Box from '@/components/Box/Box'
+import Table from '@/components/Table/Table'
+import NumberInput from './NumberInput'
+import UnitSelection from './UnitSelection'
+import Result from './Result'
 
 export default function Converter() {
   const [value, setValue] = useState<number | ''>('')
@@ -17,23 +17,25 @@ export default function Converter() {
   const data = [
     {
       Input: <NumberInput value={value} onValueChange={setValue} />,
-      From: <UnitSelection label="From" selectedUnit={fromUnit} onUnitChange={setFromUnit} />,
-      To: <UnitSelection label="To" selectedUnit={toUnit} onUnitChange={setToUnit} />,
+      From: <UnitSelection label='From' selectedUnit={fromUnit} onUnitChange={setFromUnit} />,
+      To: <UnitSelection label='To' selectedUnit={toUnit} onUnitChange={setToUnit} />,
       Result: <Result value={value} fromUnit={fromUnit} toUnit={toUnit} />,
     }
   ]
 
   return (
-    <Box title="Time Converter">
-      <div className='flex justify-center items-center h-screen'>
-        <div className='absolute top-[40%] w-[75%]'>
+    <Box title='Time Converter'>
+      <div className='absolute w-full'>
+        <h1 className='text-xl underline underline-offset-2'>Description:</h1>
+        <p className='text-sm sm:text-base md:text-lg lg:text-xl w-full max-w-[85%] break-words overflow-hidden flex flex-wrap min-w-0'>
+          This application converts between various time units,
+          assisting in determining the age of drives when analyzing faulty drives in field or lab systems.
+        </p>
+      </div>
+      <div className='flex justify-center h-screen'>
+        <div className='absolute top-[22%] w-[75%] lg:top-[20%]'>
           <Table headers={headers} data={data} />
         </div>
-      </div>
-
-      <div className='absolute bottom-0 w-full py-24'>
-        <h1 className='text-xl underline underline-offset-2'>Description:</h1>
-        <p className='text-lg'>This application converts between various time units, assisting in determining the age of drives when analyzing faulty drives in field or lab systems.</p>
       </div>
     </Box>
   )

@@ -11,42 +11,53 @@ export default function Table({ headers, data }: ITable) {
   const headersToDisplay = isEnglish(headers) ? headers : headers.slice().reverse()
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white border border-gray-300 table-fixed">
-        <colgroup>
-          {headersToDisplay.map((_, index) => (
-            <col key={index} style={{ width: `${100 / headersToDisplay.length}%` }} />
-          ))}
-        </colgroup>
-
-        <thead className="bg-gray-100">
-          <tr>
-            {headersToDisplay.map((header, index) => (
-              <th
-                key={index}
-                className="py-2 px-4 border-b border-r text-center"
-              >
-                {header}
-              </th>
+    <div className='overflow-x-auto'>
+      <div className='hidden md:block'>
+        <table className='min-w-full bg-white border border-gray-300 table-auto border-collapse'>
+          <colgroup>
+            {headersToDisplay.map((_, index) => (
+              <col key={index} style={{ width: `${100 / headersToDisplay.length}%` }} />
             ))}
-          </tr>
-        </thead>
-
-        <tbody>
-          {data.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {headersToDisplay.map((header, cellIndex) => (
-                <td
-                  key={cellIndex}
-                  className="py-2 px-4 border-b border-r text-center"
-                >
-                  {row[header]}
-                </td>
+          </colgroup>
+          <thead className='bg-gray-100 border border-gray-300'>
+            <tr>
+              {headersToDisplay.map((header, index) => (
+                <th key={index} className='py-2 px-4 border border-gray-300 text-center'>
+                  {header}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {headersToDisplay.map((header, cellIndex) => (
+                  <td key={cellIndex} className='py-2 px-4 border border-gray-300 text-center'>
+                    {row[header]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className='md:hidden'>
+        <table className='min-w-full bg-white border border-gray-300 table-auto border-collapse'>
+          <tbody>
+            {data.map((row, rowIndex) => (
+              <tr key={rowIndex} className='border border-gray-300'>
+                {headersToDisplay.map((header, cellIndex) => (
+                  <td key={cellIndex} className='py-2 px-4 border border-gray-300 flex'>
+                    <span className='w-1/3 bg-gray-100 font-bold px-2 py-1 lg:text-center border-r border-gray-300'>{header}</span>
+                    <span className='w-2/3 px-2 py-1 lg:text-center'>{row[header]}</span>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }

@@ -27,11 +27,11 @@ export default function NumberInput({ value, onValueChange }: NumberInputProps) 
 
   return (
     <input
-      type="number"
-      className="w-full"
+      type='number'
+      className='w-full'
       value={value}
       onChange={handleChange}
-      placeholder="Enter numbers only"
+      placeholder='Enter numbers only'
       ref={inputRef}
     />
   )

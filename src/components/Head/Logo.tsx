@@ -7,11 +7,11 @@ export default function Logo() {
       <Image
         src={'/icons/sgu.jpg'}
         alt={'emblem'}
-        width={25}
-        height={25}
+        width={40}
+        height={40}
         className='rounded'
       />
-      <span className='ml-2 hidden lg:inline'>StasUtils.</span>
+      <span className='opacity-0 max-w-0 overflow-hidden invisible absolute left-0 transition-all duration-0 ease-in-out lg:relative lg:opacity-100 lg:max-w-[150px] lg:visible lg:duration-700 ml-1'>StasUtils.</span>
     </Link>
   )
 }

@@ -9,10 +9,14 @@ body {
     overflow: hidden;
 }
 
-/*
-For Mobile Devices – 320px — 480px.
-iPads and Tablets – 481px — 768px.
-Laptops and small screen – 769px — 1024px.
-Large screens and Desktops – 1025px — 1200px.
-TV and Extra Large Screens – 1201px and more.
-*/
+.converter-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* Ensures Converter Page Fills Screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+    /* Adjust spacing if navbar overlaps */
+}

@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Logo() {
   return (
     <Link href='/' className='text-2xl flex items-center justify-center h-14 text-[#f39c12] font-bold'>
-      <span className="text-white px-1 py-1 rounded text-lg shadow-md lg:hidden">
+      <span className="text-[#f39c12] px-1 py-1 rounded text-lg shadow-md lg:hidden">
         SGU
       </span>
       <span

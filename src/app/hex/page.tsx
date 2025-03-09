@@ -55,7 +55,7 @@ export default function Hexadecimal() {
   return (
     <Box title="Hexadecimal">
       <div className="flex flex-col justify-center">
-        <div className="flex flex-col justify-center items-center w-100 p-4">
+        <div className="flex flex-col justify-center items-center w-100 p-4 mt-20">
           <span className="mb-2 text-2xl">Enter Hexadecimal Address</span>
           <input
             ref={inputRef}

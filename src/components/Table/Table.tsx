@@ -49,7 +49,7 @@ export default function Table({ headers, data }: ITable) {
               <tr key={rowIndex} className='border border-gray-300'>
                 {headersToDisplay.map((header, cellIndex) => (
                   <td key={cellIndex} className='py-2 px-4 border border-gray-300 flex'>
-                    <span className='w-1/3 bg-gray-100 font-bold px-2 py-1 lg:text-center border-r border-gray-300'>{header}</span>
+                    <span className='w-1/3 flex items-center font-bold px-2 py-1 lg:text-center border-r border-gray-300'>{header}</span>
                     <span className='w-2/3 px-2 py-1 lg:text-center'>{row[header]}</span>
                   </td>
                 ))}

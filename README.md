@@ -19,8 +19,8 @@
 | Done       | Task-13  | Login component     | sb/task-13_login_component      |                                      |                        |
 | Done       | Task-14  | Improvements        | sb/task-14_improvements         |                                      |                        |
 | Done       | Task-15  | Responsive fix       | sb/task-15_responsive           |                                      | Have a bug             |
-| Failed     | Task-16  | Right wing system   | sb/task-16_right_wing           | right wing, and improvements         |                        |
-| Failed     | Task-17  | hex                 | sb/task-17_hex                  |                                      |                        |
+| Rejected   | Task-16  | Right wing system   | sb/task-16_right_wing           | right wing, and improvements         |                        |
+| Rejected   | Task-17  | hex                 | sb/task-17_hex                  |                                      |                        |
 | Done       | Task-18  | main                | main                            | Application improvement and bug fixes |                        |
 | Done       | Task-19  | Text & Improvements | main                            | Few improvements and text component  |                        |
 |            | Task-20  |                     |                                 |                                      |                        |
@@ -30,6 +30,7 @@
 - Responsive does not working.
 - Home page have scrolling error, while this page should not have scrolling at all.
 - When responsive navbar text comes before the navbar fully open.
+- Absolute make the table move when open dropdown.
 
 # Open bugs:
-- Absolute make the table move when open dropdown.
+NONE BUGS YET.

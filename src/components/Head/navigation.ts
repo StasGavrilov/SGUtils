@@ -1,7 +1,27 @@
-import { faSyncAlt, faHeading, faFont } from '@fortawesome/free-solid-svg-icons'
+export type NavigationItem =
+  | {
+    label: string
+    children: {
+      label: string
+      target: string
+    }[]
+  }
+  | {
+    label: string
+    target: string
+  }
 
-export const navigation = [
-  { label: 'Converter', target: '/converter', icon: faSyncAlt },
-  { label: 'Hex', target: '/hex', icon: faHeading },
-  { label: 'Text', target: '/text', icon: faFont },
+export const navigation: NavigationItem[] = [
+  {
+    label: 'Helpers',
+    children: [
+      { label: 'Converter', target: '/converter' },
+      { label: 'Hex', target: '/hex' },
+      { label: 'Text', target: '/text' },
+    ],
+  },
+  {
+    label: 'InfiStas',
+    target: '/infistas',
+  },
 ]

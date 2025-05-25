@@ -15,8 +15,8 @@ export default function Select({ options, value, onChange, placeholder }: Select
         <SelectPrimitive.Root value={value} onValueChange={onChange}>
             <div className="relative">
                 <SelectPrimitive.Trigger
-                    className="flex items-center justify-center w-auto px-4 py-2 border-none border-main bg-white rounded-md cursor-pointer
-                    focus:outline-none focus-visible:outline-none"
+                    className="flex items-center justify-center w-auto px-4 py-2 border border-transparent bg-white rounded-md cursor-pointer
+                        focus:outline-none focus-visible:outline-none hover:border-secondary"
                 >
                     <SelectPrimitive.Value placeholder={placeholder || 'Select an option'} />
                 </SelectPrimitive.Trigger>

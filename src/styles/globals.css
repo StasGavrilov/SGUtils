@@ -13,10 +13,8 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    /* Ensures Converter Page Fills Screen */
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 4rem;
-    /* Adjust spacing if navbar overlaps */
 }

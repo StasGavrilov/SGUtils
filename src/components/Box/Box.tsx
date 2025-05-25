@@ -5,8 +5,8 @@ interface ITitle {
 
 export default function Box({ title, children }: ITitle) {
   return (
-    <div className='p-4 lg:ml-0 ml-[-6rem] transition-all duration-500 ease-in-out'>
-      <h2 className='text-2xl'>{title}</h2>
+    <div className='md:p-20 md:ml-[-6rem] md:mt-4 transition-all duration-500 ease-in-out flex flex-col justify-center w-full'>
+      <h2 className='md:text-2xl text-lg'>{title}</h2>
       <main className='p-2 mt-4'>
         {children}
       </main>

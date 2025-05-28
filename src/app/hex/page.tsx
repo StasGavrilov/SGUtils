@@ -55,14 +55,11 @@ export default function Hexadecimal() {
   return (
     <Box title="Hexadecimal">
       <div className="flex flex-col justify-center">
-        <div className="flex flex-col justify-center items-center w-100 p-4 mt-20">
+        <div className="flex flex-col justify-center items-center w-100 p-4">
           <span className="mb-2 text-2xl">Enter Hexadecimal Address</span>
           <input
             ref={inputRef}
-            className={`p-4 mb-4 rounded border-1 outline-none border-none focus:ring-0
-              ${error ? 'border-red-500' : 'border-main'}
-               focus:border-secondary hover:border-secondary
-            `}
+            className={`p-4 mb-4 rounded border-1 outline-none border-none focus:ring-0 focus:border-secondary hover:border-secondary ${error ? 'border-red-500' : 'border-main'}`}
             type="text"
             value={hexAddress}
             onChange={handleInputChange}

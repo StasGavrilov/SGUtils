@@ -26,7 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang='en' className={montserrat.className}>
       <body>
         <Header />
-        <main className='pl-[160px]'>
+        <main className='mt-[25%]'>
           {children}
         </main>
       </body>

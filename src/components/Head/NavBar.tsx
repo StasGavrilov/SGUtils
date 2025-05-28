@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+
 import { navigation } from './navigation'
 import { useOutsideClick } from '@/helpers/useOutsideClick'
 import DropdownNavItem from './DropdownNavItem'

@@ -30,7 +30,7 @@ export default function Converter() {
         assisting in determining the age of drives when analyzing faulty drives in field or lab systems.
       </p>
       <div className='flex justify-center items-start min-h-screen'>
-        <div className='w-[75%] lg:mt-[5%] mt-[10%]'>
+        <div className='w-[75%] mt-[10%] lg:mt-[5%]'>
           <Table headers={headers} data={data} />
         </div>
       </div>

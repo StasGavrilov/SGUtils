@@ -25,7 +25,7 @@ export default function Converter() {
 
   return (
     <Box title='Time Converter'>
-      <p className='text-sm sm:text-base md:text-lg lg:text-xl w-full break-words overflow-hidden flex flex-wrap min-w-0 text-center'>
+      <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-full overflow-hidden whitespace-pre-wrap break-normal ml-12">
         This application converts between various time units,
         assisting in determining the age of drives when analyzing faulty drives in field or lab systems.
       </p>

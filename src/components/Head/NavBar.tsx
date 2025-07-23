@@ -1,53 +1,62 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { navigation } from './navigation'
+import { useOutsideClick } from '@/helpers/useOutsideClick'
+import DropdownNavItem from './DropdownNavItem'
+import SimpleNavItem from './SimpleNavItem'
+import { hasChildren, hasTarget } from './types'
 
 export default function NavBar() {
+  const [dropdownOpen, setDropdownOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('Home')
   const pathname = usePathname()
+  const dropdownRef = useOutsideClick(() => setDropdownOpen(false))
 
   useEffect(() => {
-    const activeNavItem = navigation.find(nav => nav.target === pathname)
-    if (activeNavItem) {
-      setActiveTab(activeNavItem.label)
-    } else {
-      setActiveTab('Home')
-    }
+    const allLinks = navigation.flatMap(item => {
+      if (hasChildren(item)) return item.children
+      if (hasTarget(item)) return [item]
+      return []
+    })
+    const current = allLinks.find(link => link.target === pathname)
+    setActiveTab(current?.label ?? 'Home')
   }, [pathname])
 
   return (
-    <ul className='flex flex-col w-full items-center lg:items-start'>
-      {navigation.map(nav => {
-        const isActive = activeTab === nav.label
-        return (
-          <li
-            key={nav.label}
-            className={`
-              group h-10 text-xl flex items-center justify-center w-full px-2 hover:bg-white hover:text-secondary text-white hover:font-[600]
-              ${isActive ? 'bg-secondary font-[600]' : ''}
-            `}
-          >
-            <Link
-              href={nav.target}
-              onClick={() => setActiveTab(nav.label)}
-              className='flex items-center justify-center w-full lg:justify-start'
-            >
-              <FontAwesomeIcon icon={nav.icon} className='w-6 h-6 lg:w-5 lg:h-5 lg:mr-2' />
-              <span className='opacity-0 max-w-0 overflow-hidden invisible absolute left-0
-                lg:transition-all lg:duration-700 lg:ease-in-out lg:group-hover:opacity-100
-                lg:group-hover:max-w-[150px] lg:group-hover:visible lg:relative lg:opacity-100 lg:max-w-[150px] lg:visible'
-              >
-                {nav.label}
-              </span>
-            </Link>
-          </li>
-        )
+    <div className="flex items-center text-md font-medium">
+      {navigation.map(item => {
+        const isActive = activeTab === item.label
+
+        if (hasChildren(item)) {
+          return (
+            <DropdownNavItem
+              key={item.label}
+              item={item}
+              isActive={isActive}
+              dropdownOpen={dropdownOpen}
+              setDropdownOpen={setDropdownOpen}
+              setActiveTab={setActiveTab}
+              dropdownRef={dropdownRef}
+            />
+          )
+        }
+
+        if (hasTarget(item)) {
+          return (
+            <SimpleNavItem
+              key={item.label}
+              item={item}
+              isActive={isActive}
+              setActiveTab={setActiveTab}
+            />
+          )
+        }
+
+        return null
       })}
-    </ul>
+    </div>
   )
 }

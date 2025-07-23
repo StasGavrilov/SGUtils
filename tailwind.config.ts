@@ -11,7 +11,6 @@ const config: Config = {
     'text-main',
     'text-red',
   ],
-
   theme: {
     extend: {
       backgroundColor: {
@@ -27,6 +26,15 @@ const config: Config = {
         'main': '#2c3e50',
         'secondary': '#18bc9c',
         'red': '#FF0000',
+      },
+      screens: {
+        'xs': '430px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '2048px',
       },
     },
   },

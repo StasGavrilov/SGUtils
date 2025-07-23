@@ -25,14 +25,12 @@ export default function Converter() {
 
   return (
     <Box title='Time Converter'>
-      <div className='relative w-full'>
-        <p className='text-sm sm:text-base md:text-lg lg:text-xl w-full max-w-[85%] break-words overflow-hidden flex flex-wrap min-w-0'>
-          This application converts between various time units,
-          assisting in determining the age of drives when analyzing faulty drives in field or lab systems.
-        </p>
-      </div>
+      <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-full overflow-hidden whitespace-pre-wrap break-normal ml-12">
+        This application converts between various time units,
+        assisting in determining the age of drives when analyzing faulty drives in field or lab systems.
+      </p>
       <div className='flex justify-center items-start min-h-screen'>
-        <div className='w-[75%] lg:mt-[5%] mt-[10%]'>
+        <div className='w-[75%] mt-[10%] lg:mt-[5%]'>
           <Table headers={headers} data={data} />
         </div>
       </div>

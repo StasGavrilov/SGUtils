@@ -55,10 +55,7 @@ export default function Strings() {
 
           <input
             ref={inputRef}
-            className={`w-[75%] p-4 mb-4 rounded border-1 outline-none border-none focus:ring-0
-              ${error ? 'border-red-500' : 'border-main'}
-               focus:border-secondary hover:border-secondary
-            `}
+            className={`w-[75%] p-4 mb-4 rounded border-1 outline-none border-none focus:ring-0 focus:border-secondary hover:border-secondary ${error ? 'border-red-500' : 'border-main'}`}
             type='text'
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}

@@ -1,7 +1,7 @@
 ## 📱 Mobile Devices (Phones)
 | Device                   | Resolution (px) | Aspect Ratio |
 |--------------------------|-----------------|--------------|
-| iPhone 14 Pro Max        | 430 x 932       | 19.5:9       |
+| *iPhone 14 Pro Max*      | *430 x 932*     | *19.5:9*     |
 | iPhone 13 Pro            | 390 x 844       | 19.5:9       |
 | iPhone SE (2022)         | 375 x 667       | 16:9         |
 | Samsung Galaxy S23 Ultra | 412 x 915       | 20:9         |
